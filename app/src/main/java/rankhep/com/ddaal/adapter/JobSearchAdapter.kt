@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import rankhep.com.ddaal.R
 
-class JobSearchAdapter : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
+class JobSearchAdapter(var items:ArrayList<String>) : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
 
     lateinit var mTagListAdapter: TagListAdapter
     override fun onBindViewHolder(holder: ViewHolder?, p1: Int) {
@@ -28,5 +28,5 @@ class JobSearchAdapter : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
         var tagList = v.findViewById<RecyclerView>(R.id.tag_list)
     }
 
-    override fun getItemCount(): Int = 3
+    override fun getItemCount(): Int = items.size
 }

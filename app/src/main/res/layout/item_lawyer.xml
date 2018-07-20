@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.loopeer.shadow.ShadowView
+        android:id="@+id/top_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:elevation="10dp"
+        app:cornerRadius="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shadowMarginBottom="20dp"
+        app:shadowMarginRight="16dp"
+        app:shadowRadius="14dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:background="@drawable/bg_list_puff">
+
+            <com.loopeer.shadow.ShadowView
+                android:id="@+id/image_shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:elevation="10dp"
+                app:cornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shadowMarginBottom="8dp"
+                app:shadowMarginRight="8dp"
+                app:shadowRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_launcher_background" />
+            </com.loopeer.shadow.ShadowView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심의진 변호사"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/field"
+                app:layout_constraintLeft_toRightOf="@+id/image_shadow"
+                app:layout_constraintTop_toTopOf="@+id/image_shadow" />
+
+            <TextView
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/unSelectedColor"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/name"
+                app:layout_constraintLeft_toRightOf="@+id/name"
+                app:layout_constraintTop_toTopOf="@+id/name"
+                android:text="제로픈 법률사무소" />
+
+            <TextView
+                android:id="@+id/field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분야"
+                android:textColor="#202020"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/image_shadow"
+                app:layout_constraintLeft_toLeftOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/field_variable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="노무사"
+                android:textColor="#202020"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toRightOf="@+id/field"
+                app:layout_constraintTop_toTopOf="@+id/field" />
+        </android.support.constraint.ConstraintLayout>
+    </com.loopeer.shadow.ShadowView>
+</android.support.constraint.ConstraintLayout>

@@ -20,5 +20,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:text="본 서비스는 자문을 얻기 위한 참고용으로만 이용 가능하며,\n그 외 목적으로는 이용시 책임이 없음을 밝힙니다." />
+        android:text="본 서비스는 자문을 얻기 위한 참고용으로만 이용 가능하며,\n그 외 목적으로는 이용시 책임이 없음을 밝힙니다." />
 </android.support.constraint.ConstraintLayout>

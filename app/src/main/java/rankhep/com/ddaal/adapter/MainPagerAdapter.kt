@@ -10,6 +10,6 @@ class MainPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         return MainFragment()
     }
 
-    override fun getCount(): Int = 1
+    override fun getCount(): Int = 2
 
 }
