@@ -23,8 +23,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:background="@drawable/bg_list_puff">
+            android:layout_height="84dp">
 
             <com.loopeer.shadow.ShadowView
                 android:id="@+id/image_shadow"
