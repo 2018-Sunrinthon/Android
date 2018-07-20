@@ -139,7 +139,7 @@ class CameraView : SurfaceView, SurfaceHolder.Callback {
         }
     }
 
-    fun saveImage() {
+    fun saveImage(onSave: (String) -> Unit) {
         getPicture { img ->
             val bmp = BitmapFactory.decodeByteArray(img, 0, img.size)
             var folder = Environment.getExternalStorageDirectory().absolutePath + "/ddaal/"
@@ -151,6 +151,7 @@ class CameraView : SurfaceView, SurfaceHolder.Callback {
             val out = FileOutputStream(folder + filename)
             bmp.compress(Bitmap.CompressFormat.JPEG, 100, out)
             out.close()
+            onSave.invoke(folder + filename)
         }
     }
 }

@@ -2,6 +2,7 @@ package rankhep.com.dhlwn.utils
 
 
 import android.graphics.Bitmap
+import okhttp3.MultipartBody
 import rankhep.com.ddaal.models.post.Post
 import retrofit2.Call
 import retrofit2.http.*
@@ -14,6 +15,7 @@ interface RetrofitInterface {
     @GET("/community/list/:page")
     fun getPostData(): Call<ArrayList<Post>>
 
+    @Multipart
     @POST("/community/post/add")
     @FormUrlEncoded
     fun addPost(@Field("post_title") post_title: String,
@@ -25,7 +27,7 @@ interface RetrofitInterface {
                 @Field("alba_time") alba_time: Double,
                 @Field("alba_pay") alba_pay: Int,
                 @Field("call") call: String,
-                @Field("post_profile_image_url") post_profile_image_url: Bitmap): Call<String>
+                @Part("post_profile_image_url") post_profile_image_url: MultipartBody.Part): Call<String>
 
     @POST("/community/check/admin")
     @FormUrlEncoded

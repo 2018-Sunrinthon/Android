@@ -1,4 +1,4 @@
 package rankhep.com.ddaal.models.post
 
-class PostHashTag {
+class PostHashTag(var hash_tag: String) {
 }

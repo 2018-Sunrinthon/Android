@@ -14,6 +14,13 @@ import android.view.SurfaceHolder
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_camera.*
+import okhttp3.MediaType
+import rankhep.com.ddaal.R
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import rankhep.com.dhlwn.utils.NetworkHelper
+import java.io.File
+
 
 class CameraFragment() : Fragment() {
 
@@ -36,7 +43,16 @@ class CameraFragment() : Fragment() {
         }
 
         cameraView.setOnClickListener {
-            (it as CameraView).setFocus { b, camera ->  }
+            (it as CameraView).setFocus { b, camera -> }
+        }
+
+        pictureBtn.setOnClickListener {
+            cameraView.saveImage() { path ->
+                val requestFile = RequestBody.create(MediaType.parse("multipart/jpg"), File(path))
+                val body = MultipartBody.Part.createFormData("post_profile_image_url", File(path).name, requestFile)
+                NetworkHelper.networkInstance
+
+            }
         }
     }
 
@@ -52,7 +68,7 @@ class CameraFragment() : Fragment() {
                 || ContextCompat.checkSelfPermission(context!!, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity!!,
                     arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE),
-                    1000);
+                    1000)
 
         } else {
             startCamera()
