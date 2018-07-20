@@ -7,18 +7,23 @@
     tools:context=".SplashActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="218dp"
+        android:layout_height="56dp"
+        android:src="@drawable/logo_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
+        android:text="본 서비스는 자문을 얻기 위한 참고용으로만 이용 가능하며,\n그 외 목적으로는 이용시 책임이 없음을 밝힙니다."
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="본 서비스는 자문을 얻기 위한 참고용으로만 이용 가능하며,\n그 외 목적으로는 이용시 책임이 없음을 밝힙니다." />
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

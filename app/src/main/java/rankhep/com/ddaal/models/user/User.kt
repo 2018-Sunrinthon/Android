@@ -1,14 +1,14 @@
-package rankhep.com.ddaal.models
+package rankhep.com.ddaal.models.user
 
 import java.io.Serializable
 
 class User(var id:String,
            var password:String,
            var token:String,
-           var user_data:UserData,
-           var user_location:UserLocation,
-           var user_contract:UserContract,
-           var user_setting:UserSetting):Serializable
+           var user_data: UserData,
+           var user_location: UserLocation,
+           var user_contract: UserContract,
+           var user_setting: UserSetting):Serializable
 //User
 //id
 //

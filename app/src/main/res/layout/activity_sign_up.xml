@@ -1,10 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".SignUpActivity">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:gravity="end"
+            android:text="확인"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/sign_up_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="회원 가입"
+        android:textColor="#202020"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_container" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#d0d0d0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_text" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:text="이름"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <EditText
+        android:id="@+id/name_text"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="나이"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_text" />
+
+    <EditText
+        android:id="@+id/age_text"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="나이"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/age" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="아이디"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/age_text" />
+
+    <EditText
+        android:id="@+id/id_text"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/id" />
+
+    <TextView
+        android:id="@+id/pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="비밀번호"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_text" />
+
+    <EditText
+        android:id="@+id/pwd_text"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/pwd" />
+
+    <TextView
+        android:id="@+id/pwd_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="비밀번호 확인"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pwd_text" />
+
+    <EditText
+        android:id="@+id/pwd_check_text"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 확인"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/pwd_check" />
+
+    <TextView
+        android:id="@+id/is_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="노동자 여부"
+        android:textColor="#202020"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@+id/pwd_check_text" />
+
+    <Switch
+        android:id="@+id/is_admin_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@+id/is_admin" />
 </android.support.constraint.ConstraintLayout>

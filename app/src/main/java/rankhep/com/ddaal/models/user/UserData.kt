@@ -1,4 +1,4 @@
-package rankhep.com.ddaal.models
+package rankhep.com.ddaal.models.user
 
 import java.io.Serializable
 

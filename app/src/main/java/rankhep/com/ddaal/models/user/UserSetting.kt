@@ -1,4 +1,6 @@
-package rankhep.com.ddaal.models
+package rankhep.com.ddaal.models.user
 
-class UserSetting(var notification_allow:Boolean) {
+import java.io.Serializable
+
+class UserSetting(var notification_allow:Boolean):Serializable {
 }
