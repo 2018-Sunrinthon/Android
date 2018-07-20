@@ -1,6 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="프로필"
+        android:textColor="#202020"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.loopeer.shadow.ShadowView
+        android:id="@+id/profile_shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="10dp"
+        app:cornerRadius="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_text"
+        app:shadowMarginBottom="20dp"
+        app:shadowMarginRight="16dp"
+        app:shadowRadius="14dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="84dp">
+
+            <com.loopeer.shadow.ShadowView
+                android:id="@+id/image_shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:elevation="10dp"
+                app:cornerRadius="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shadowMarginBottom="8dp"
+                app:shadowMarginRight="8dp"
+                app:shadowRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_launcher_background" />
+            </com.loopeer.shadow.ShadowView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심의진"
+                android:textColor="#202020"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/field"
+                app:layout_constraintLeft_toRightOf="@+id/image_shadow"
+                app:layout_constraintTop_toTopOf="@+id/image_shadow" />
+
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전라남도 신안군"
+                android:textColor="#202020"
+
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/info_text"
+                app:layout_constraintLeft_toRightOf="@+id/image_shadow"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/change_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="주소 변경"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toRightOf="@+id/address_text"
+                app:layout_constraintTop_toTopOf="@id/address_text" />
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21세, 염전 노동자"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_shadow"
+                app:layout_constraintLeft_toLeftOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/address_text" />
+        </android.support.constraint.ConstraintLayout>
+    </com.loopeer.shadow.ShadowView>
+
+    <TextView
+        android:id="@+id/contract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="저장된 계약서 사본"
+        android:textColor="#202020"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_shadow_view" />
+
+    <TextView
+        android:id="@+id/contract_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="2018년 7월 20일에 스캔한 계약서 사본 파일이 있습니다."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contract" />
+
+    <TextView
+        android:id="@+id/open_copy_contract"
+        android:layout_width="80dp"
+        android:layout_height="22dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_round_square"
+        android:backgroundTint="@color/colorPrimary"
+        android:gravity="center"
+        android:text="사본 열기"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contract_date" />
+
+
+    <TextView
+        android:id="@+id/push_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:text="땜빵 푸시 알림"
+        android:textColor="#202020"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/open_copy_contract" />
+
+    <TextView
+        android:id="@+id/push_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="주위에 땜빵이 필요한 일자리가 생길 때,푸시 알림을 띄워 알립니다."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/push_text" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/push_text" />
 </android.support.constraint.ConstraintLayout>
