@@ -13,6 +13,7 @@
         android:layout_height="?attr/actionBarSize">
 
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_close"
@@ -21,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/success_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
@@ -107,15 +109,15 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/age_text" />
+        app:layout_constraintTop_toBottomOf="@+id/age_text" />
 
     <EditText
         android:id="@+id/id_text"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:hint="아이디"
-        app:layout_constraintLeft_toLeftOf="@id/name"
-        app:layout_constraintTop_toBottomOf="@id/id" />
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/id" />
 
     <TextView
         android:id="@+id/pwd"
@@ -127,15 +129,16 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_text" />
+        app:layout_constraintTop_toBottomOf="@+id/id_text" />
 
     <EditText
         android:id="@+id/pwd_text"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="비밀번호"
-        app:layout_constraintLeft_toLeftOf="@id/name"
-        app:layout_constraintTop_toBottomOf="@id/pwd" />
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
 
     <TextView
         android:id="@+id/pwd_check"
@@ -147,25 +150,27 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pwd_text" />
+        app:layout_constraintTop_toBottomOf="@+id/pwd_text" />
 
     <EditText
         android:id="@+id/pwd_check_text"
         android:layout_width="180dp"
+        android:inputType="textPassword"
         android:layout_height="wrap_content"
         android:hint="비밀번호 확인"
-        app:layout_constraintLeft_toLeftOf="@id/name"
-        app:layout_constraintTop_toBottomOf="@id/pwd_check" />
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/pwd_check" />
 
     <TextView
         android:id="@+id/is_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="노동자 여부"
+        android:text="고용주 여부"
+
         android:textColor="#202020"
         android:textSize="14sp"
-        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintLeft_toLeftOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/pwd_check_text" />
 
     <Switch

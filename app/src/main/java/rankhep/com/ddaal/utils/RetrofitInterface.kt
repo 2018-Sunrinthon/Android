@@ -38,4 +38,22 @@ interface RetrofitInterface {
                    @Field("comment_user_name") comment_user_name: String,
                    @Field("comment_text") comment_text: String,
                    @Field("comment_puff_amount") comment_puff_amount: String)
+
+
+    @POST("/auth/register")
+    @FormUrlEncoded
+    fun register(@Field("id") id: String,
+                 @Field("password") password: String,
+                 @Field("name") name: String,
+                 @Field("age") age: String,
+                 @Field("admin") admin: Boolean): Call<Map<String, String>>
+
+    @POST("/auth/login")
+    @FormUrlEncoded
+    fun login(@Field("id") id: String,
+              @Field("password") password: String): Call<Map<String,String>>
+
+    @POST("/auth/login/auto")
+    @FormUrlEncoded
+    fun autoLogin(@Field("token") token: String): Call<Map<String, String>>
 }

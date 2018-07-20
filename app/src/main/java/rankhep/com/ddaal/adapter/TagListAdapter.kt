@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import rankhep.com.ddaal.R
 
 class TagListAdapter : RecyclerView.Adapter<TagListAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(p0: ViewGroup?, p1: Int): ViewHolder =
-            ViewHolder(LayoutInflater.from(p0?.context).inflate(R.layout.item_tag, p0, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+            ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_tag, parent, false))
+
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    }
+
 
     override fun getItemCount(): Int = 3
 
-    override fun onBindViewHolder(p0: ViewHolder?, p1: Int) {
-    }
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 

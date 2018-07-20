@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkHelper(private val context: Context) {
     companion object {
-        val url = "https://jhone-364e5.firebaseio.com/"
+        val url = "http://aws.soylatte.kr"
 
         var retrofit: Retrofit? = null
 
@@ -20,7 +20,7 @@ class NetworkHelper(private val context: Context) {
             get() {
                 if (retrofit == null) {
                     retrofit = Retrofit.Builder()
-                            .baseUrl(url)
+                            .baseUrl(url +":"+ 5000)
                             .addConverterFactory(GsonConverterFactory.create())
                             .build()
                 }

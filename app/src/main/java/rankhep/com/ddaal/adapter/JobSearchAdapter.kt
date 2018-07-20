@@ -8,13 +8,7 @@ import android.view.ViewGroup
 import rankhep.com.ddaal.R
 
 class JobSearchAdapter(var items: ArrayList<String>, var listener: OnItemClickListener) : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
-
-    interface OnItemClickListener {
-        fun onItemClickListener(v: View, position: Int)
-    }
-
-    lateinit var mTagListAdapter: TagListAdapter
-    override fun onBindViewHolder(holder: ViewHolder?, p1: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         mTagListAdapter = TagListAdapter()
 
         holder?.run {
@@ -26,8 +20,14 @@ class JobSearchAdapter(var items: ArrayList<String>, var listener: OnItemClickLi
         }
     }
 
-    override fun onCreateViewHolder(p0: ViewGroup?, p1: Int): ViewHolder =
-            ViewHolder(LayoutInflater.from(p0?.context).inflate(R.layout.item_job, p0, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_job, parent, false))
+
+
+    interface OnItemClickListener {
+        fun onItemClickListener(v: View, position: Int)
+    }
+
+    lateinit var mTagListAdapter: TagListAdapter
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var tagList = v.findViewById<RecyclerView>(R.id.tag_list)
