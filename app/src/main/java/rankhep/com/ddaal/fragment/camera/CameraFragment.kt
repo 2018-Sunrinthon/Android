@@ -9,16 +9,22 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.SurfaceHolder
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.fragment_camera.*
 import okhttp3.MediaType
 import rankhep.com.ddaal.R
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import rankhep.com.dhlwn.utils.NetworkHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 
 
@@ -48,9 +54,18 @@ class CameraFragment() : Fragment() {
 
         pictureBtn.setOnClickListener {
             cameraView.saveImage() { path ->
-                val requestFile = RequestBody.create(MediaType.parse("multipart/jpg"), File(path))
+                val requestFile = RequestBody.create(MediaType.parse("multipart/png"), File(path))
                 val body = MultipartBody.Part.createFormData("post_profile_image_url", File(path).name, requestFile)
-                NetworkHelper.networkInstance
+                NetworkHelper.networkInstance.getOcr(body).enqueue(object: Callback<String> {
+                    override fun onFailure(call: Call<String>?, t: Throwable?) {
+                        Log.e("Error", t?.message)
+                    }
+
+                    override fun onResponse(call: Call<String>?, response: Response<String>?) {
+                        Toast.makeText(context,""+response?.body(), LENGTH_SHORT).show()
+                    }
+
+                })
 
             }
         }

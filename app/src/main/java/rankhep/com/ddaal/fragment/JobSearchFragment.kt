@@ -55,7 +55,7 @@ class JobSearchFragment : Fragment(), JobSearchAdapter.OnItemClickListener {
         return view
     }
 
-    override fun onItemClickListener(v: View, position: Int, post: Post) {
+    override fun onItemClickListener(v: View, position: Int, post: Post?) {
         var intent: Intent = Intent(context, WorkSpaceInfoActivity::class.java)
         intent.putExtra("post", post)
         startActivity(intent)

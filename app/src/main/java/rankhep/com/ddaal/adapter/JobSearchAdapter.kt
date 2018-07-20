@@ -17,19 +17,21 @@ class JobSearchAdapter(var items: ArrayList<Post>, var listener: OnItemClickList
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var tags = ArrayList<PostHashTag>()
-        tags.addAll(items[position].post_data.post_hash_tag)
+        tags.add(PostHashTag("용산구"))
+        tags.add(PostHashTag("도봉구"))
+//        tags.addAll(items[position].post_data.post_hash_tag)
         mTagListAdapter = TagListAdapter(tags)
         holder?.run {
-            tagList.run {
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                adapter = mTagListAdapter
-            }
-            writer.text = items[position].author_data.author_name
-            payment.text = items[position].alba_data.alba_pay
-            description.text = items[position].post_data.post_content
-            Picasso.get().load(items[position].post_data.post_profile_image_url).into(img)
-            name.text = items[position].post_data.post_title
-            itemView.setOnClickListener { listener.onItemClickListener(it, position, items[position]) }
+//            tagList.run {
+//                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//                adapter = mTagListAdapter
+//            }
+//            writer.text = items[position].author_data.author_name
+//            payment.text = items[position].alba_data.alba_pay
+//            description.text = items[position].post_data.post_content
+//            Picasso.get().load(items[position].post_data.post_profile_image_url).into(img)
+//            name.text = items[position].post_data.post_title
+            itemView.setOnClickListener { listener.onItemClickListener(it, position, /*items[position]*/ null) }
         }
     }
 
@@ -37,7 +39,7 @@ class JobSearchAdapter(var items: ArrayList<Post>, var listener: OnItemClickList
 
 
     interface OnItemClickListener {
-        fun onItemClickListener(v: View, position: Int, post: Post)
+        fun onItemClickListener(v: View, position: Int, post: Post?)
     }
 
 
@@ -50,5 +52,5 @@ class JobSearchAdapter(var items: ArrayList<Post>, var listener: OnItemClickList
         var writer = v.findViewById<TextView>(R.id.writer_variable_text)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = 3
 }

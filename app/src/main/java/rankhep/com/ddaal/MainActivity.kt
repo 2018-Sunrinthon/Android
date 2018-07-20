@@ -3,6 +3,7 @@ package rankhep.com.ddaal
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import rankhep.com.ddaal.R.id.fab
 import rankhep.com.ddaal.adapter.MainPagerAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -14,5 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         mAdapter = MainPagerAdapter(supportFragmentManager)
         pager.adapter = mAdapter
+        pager.currentItem=1
     }
 }

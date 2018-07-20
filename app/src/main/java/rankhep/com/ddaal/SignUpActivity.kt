@@ -14,6 +14,9 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+        back_btn.setOnClickListener {
+            finish()
+        }
 
         success_btn.setOnClickListener {
             if (name_text.text.toString() != "" && age_text.text.toString() != "" && pwd_text.text.toString() != ""

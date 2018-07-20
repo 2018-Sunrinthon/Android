@@ -4,6 +4,7 @@ package rankhep.com.dhlwn.utils
 import android.graphics.Bitmap
 import okhttp3.MultipartBody
 import rankhep.com.ddaal.models.post.Post
+import rankhep.com.ddaal.models.user.LoginData
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -53,9 +54,13 @@ interface RetrofitInterface {
     @POST("/auth/login")
     @FormUrlEncoded
     fun login(@Field("id") id: String,
-              @Field("password") password: String): Call<Map<String,String>>
+              @Field("password") password: String): Call<LoginData>
 
     @POST("/auth/login/auto")
     @FormUrlEncoded
     fun autoLogin(@Field("token") token: String): Call<Map<String, String>>
+
+    @POST("/ocr/upload")
+    @Multipart
+    fun getOcr(@Part name: MultipartBody.Part): Call<String>
 }

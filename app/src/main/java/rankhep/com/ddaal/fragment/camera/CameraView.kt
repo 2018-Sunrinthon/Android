@@ -143,7 +143,7 @@ class CameraView : SurfaceView, SurfaceHolder.Callback {
         getPicture { img ->
             val bmp = BitmapFactory.decodeByteArray(img, 0, img.size)
             var folder = Environment.getExternalStorageDirectory().absolutePath + "/ddaal/"
-            val filename = "img${SimpleDateFormat("yyyyMMddhhmmss").format(Date())}.jpg"
+            val filename = "img${SimpleDateFormat("yyyyMMddhhmmss").format(Date())}.png"
             Log.e("asdf", filename)
             var folderPath = File(folder)
             if (!folderPath.isDirectory)

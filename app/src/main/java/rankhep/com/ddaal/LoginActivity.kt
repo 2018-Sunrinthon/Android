@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
+import rankhep.com.ddaal.models.user.LoginData
 import rankhep.com.dhlwn.utils.NetworkHelper
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,19 +24,19 @@ class LoginActivity : AppCompatActivity() {
 
         login_btn.setOnClickListener {
 
-            var intent = Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+//            var intent = Intent(this@LoginActivity, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
             NetworkHelper.networkInstance.login(id.text.toString(), pwd.text.toString())
-                    .enqueue(object : Callback<Map<String, String>> {
-                        override fun onFailure(call: Call<Map<String, String>>?, t: Throwable?) {
+                    .enqueue(object : Callback<LoginData> {
+                        override fun onFailure(call: Call<LoginData>?, t: Throwable?) {
                             Log.e("Error", t?.message)
                         }
 
-                        override fun onResponse(call: Call<Map<String, String>>?, response: Response<Map<String, String>>?) {
-//                            var intent = Intent(this@LoginActivity, MainActivity::class.java)
-//                            startActivity(intent)
-//                            finish()
+                        override fun onResponse(call: Call<LoginData>?, response: Response<LoginData>?) {
+                            var intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
 
                     })

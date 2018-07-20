@@ -1,20 +1,22 @@
 package rankhep.com.ddaal.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import rankhep.com.ddaal.R
+import rankhep.com.ddaal.Scan4Activity
 import rankhep.com.ddaal.adapter.MainTabPagerAdapter
 
 class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = LayoutInflater.from(context).inflate(R.layout.fragment_main, null)
         v.main_pager.adapter = MainTabPagerAdapter(fragmentManager!!)
-
         v.main_pager.setOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
@@ -36,6 +38,10 @@ class MainFragment : Fragment() {
         }
         v.setting_tab.setOnClickListener {
             tabChange(v, 2)
+        }
+        v.fab.setOnClickListener{
+            var intent = Intent(context, Scan4Activity::class.java)
+            startActivity(intent)
         }
         return v
     }
