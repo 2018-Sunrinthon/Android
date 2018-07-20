@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import rankhep.com.ddaal.R
 
-class JobSearchAdapter(var items:ArrayList<String>) : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
+class JobSearchAdapter(var items: ArrayList<String>, var listener: OnItemClickListener) : RecyclerView.Adapter<JobSearchAdapter.ViewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClickListener(v: View, position: Int)
+    }
 
     lateinit var mTagListAdapter: TagListAdapter
     override fun onBindViewHolder(holder: ViewHolder?, p1: Int) {
@@ -18,6 +22,7 @@ class JobSearchAdapter(var items:ArrayList<String>) : RecyclerView.Adapter<JobSe
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 adapter = mTagListAdapter
             }
+            itemView.setOnClickListener { listener.onItemClickListener(it, position) }
         }
     }
 
